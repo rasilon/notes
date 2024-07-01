@@ -1,0 +1,73 @@
+\documentclass[12pt,a4paper,twoside]{article}
+
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{lipsum}
+\usepackage{fontspec}
+\usepackage{wrapfig}
+\usepackage{titling}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{csquotes}
+\usepackage{unicode-math}
+\usepackage[mark,dirty=-uncomitted]{gitinfo2}
+
+\setmainfont{Roboto}
+\newfontfamily{\osifont}{osifont}
+\newfontfamily{\codefont}[Scale=0.5]{Fira Code}
+
+\setlength{\headheight}{67pt}
+\setlength{\footskip}{65pt}
+
+\fancyhead[]{}
+\fancyfoot[]{}
+\fancyhead[C]{\includegraphics[width=\textwidth]{header.png}}
+\fancyfoot[C]{\includegraphics[width=\textwidth]{internal_footer.png}}
+\fancyfoot[R]{\thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\pretitle{\begingroup\bfseries\LARGE}
+    \title{ lesson1 }
+\posttitle{\endgroup}
+\preauthor{\\\begingroup\bfseries\small}
+    \author{ Derry Hamilton }
+\postauthor{\endgroup}
+\predate{\begingroup\bfseries\small}
+    \date{ 2020-08-07 }
+\postdate{\endgroup}
+
+\parindent 0mm
+\parskip 5mm
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+ 
+\urlstyle{same}
+
+\lstset{
+    basicstyle=\codefont
+}
+
+\newcounter{para}
+\newcommand\mypara{\par\refstepcounter{para}\thepara\space}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introduction}
+\mypara blah blah blah
+\mypara foo bar baz
+\lipsum[1-7]
+
+\end{document}
